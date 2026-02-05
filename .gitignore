@@ -7,8 +7,10 @@
 # Allow specific folders
 !alacritty/
 !.zshrc-copy
-
+!yazi/
+!kitty/
 
 # Allow everything inside those folders
 !alacritty/**
-
+!yazi/**
+!kitty/**
