@@ -1,0 +1,57 @@
+/* Reset all elements to flat design */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The main bar background */
+window#waybar {
+    background-color: #323232; /* Match default swaybar grey */
+    color: #ffffff;
+}
+
+/* Workspace buttons */
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#workspaces button.focused {
+    background-color: #285577; /* Default swaybar blue accent */
+    border-bottom: 2px solid #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #900000;
+}
+
+/* Common styling for all status modules */
+#clock, #battery, #cpu, #memory, #temperature, #network, #bluetooth, #pulseaudio, #tray, #mode {
+    padding: 0 10px;
+}
+
+/* Mimic the subtle separators */
+#clock, #battery, #pulseaudio, #network, #bluetooth {
+    border-left: 1px solid #5c5c5c;
+}
+
+/* Specific module tweaks */
+#mode {
+    background-color: #285577;
+    border-bottom: 3px solid #ffffff;
+}
+
+#battery.warning {
+    color: #ff8800;
+}
+
+#battery.critical {
+    background-color: #900000;
+    color: #ffffff;
+}

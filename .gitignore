@@ -12,6 +12,7 @@
 !wezterm
 !nvim
 !sway
+!waybar
 # Allow everything inside those folders
 !alacritty/**
 !yazi/**
@@ -19,3 +20,4 @@
 !wezterm/**
 !nvim/**
 !sway/**
+!waybar/**

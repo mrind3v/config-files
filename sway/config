@@ -10,7 +10,7 @@
 set $mod Mod4
 # Home row direction keys, like vim
 set $mod Mod4 
-set $term wezterm 
+set $term kitty 
 set $left h
 set $down j
 set $up k
@@ -21,8 +21,8 @@ set $menu rofi -show drun -show-icons
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg #323232 solid_color
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -225,25 +225,30 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
     bindsym Print exec grim
-
+# Bind Alt+Ctrl+d to open the clipboard history
 #
 # Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
+
+exec copyq
+bindsym Mod1+Control+d exec copyq menu 
 bar {
-    position top
+    swaybar_command waybar
+    #position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    #colors {
+    #    statusline #ffffff
+    #    background #323232
+    #    inactive_workspace #32323200 #32323200 #5c5c5c
+    #}
 }
-
+exec nm-applet --indicator 
+exec blueman-applet
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+# Force X11 mode to stop scaling crashes
 # In your Sway config
-set $term env WAYLAND_DISPLAY="" wezterm
 include /etc/sway/config.d/*
