@@ -9,9 +9,11 @@
 !.zshrc-copy
 !yazi/
 !kitty/
-
+!wezterm
+!nvim
 # Allow everything inside those folders
 !alacritty/**
 !yazi/**
 !kitty/**
-
+!wezterm/**
+!nvim/**
