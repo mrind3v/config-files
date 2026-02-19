@@ -11,9 +11,11 @@
 !kitty/
 !wezterm
 !nvim
+!sway
 # Allow everything inside those folders
 !alacritty/**
 !yazi/**
 !kitty/**
 !wezterm/**
 !nvim/**
+!sway/**
