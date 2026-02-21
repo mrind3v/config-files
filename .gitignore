@@ -13,6 +13,7 @@
 !nvim
 !sway
 !waybar
+!zathura
 # Allow everything inside those folders
 !alacritty/**
 !yazi/**
@@ -21,3 +22,4 @@
 !nvim/**
 !sway/**
 !waybar/**
+!zathura/**
